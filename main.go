@@ -42,15 +42,27 @@ func main() {
 	}
 	fmt.Println("Isi array ganjil: ", arrayGanjil)
 	fmt.Println("Banyaknya array ganjil: ", jumlahGanjil)
+	fmt.Println("===========================================================================================")
 
 	// PRIMA //
-	// jumlahPrima
-	// var arrayPrima [20]int
+	jumlahPrima := 0
+	var arrayPrima [20]int
 
-	// // for i := 0; i < len(randomArr)-10; i++ {
-	// // 	if randomArr[i]%2 != 0 {
-	// // 		arrayGanjil[i] = randomArr[i]
-	// // 		jumlahGanjil++
-	// // 	}
-	// // }
+	for i := 0; i < len(randomArr)-10; i++ {
+		tanda := 0
+		for j := 1; j <= randomArr[i]; j++ {
+			if randomArr[i]%j == 0 {
+				tanda++
+			}
+		}
+		if (tanda == 2) && (randomArr[i] > 1) {
+			arrayPrima[i] = randomArr[i]
+			jumlahPrima++
+		}
+	}
+
+	fmt.Println("Isi array prima: ", arrayPrima)
+	fmt.Println("Banyaknya array prima: ", jumlahPrima)
+	fmt.Println("===========================================================================================")
+
 }
